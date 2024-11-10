@@ -7,7 +7,7 @@ import { UserRegister } from '../Models/user';
 })
 export class UserRegisterService {
 
-  apiURL: string = 'https://localhost:7059/api/Auth'
+  apiURL: string = 'https://localhost:7059/api/UsersLogin'
 
   constructor(private http: HttpClient) { }
 

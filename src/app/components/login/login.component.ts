@@ -33,17 +33,14 @@ export class LoginComponent {
     console.log(loginUser.Email);
     
 
-    return this.loginService.loginUser(loginUser.Email,loginUser.password).subscribe(data=>{
-      if(data){
-        this.toastr.success('Login Successfully')
-        this.router.navigate(['/admin-dashboard'])
-      }
-    },error =>{
-      this.toastr.error(error.message)
-      this.message = error.message.json
+    return this.loginService.loginUser(loginUser.Email,loginUser.password).subscribe({
+      next:response => {
+        this.toastr.success("Success")
+      },
+      error:error => this.toastr.error("error")
     })
-
-    
+  
   }
-
 }
+
+
